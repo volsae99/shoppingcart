@@ -24,6 +24,10 @@
             $routeProvider.when("/products", {
                 templateUrl: "./views/productList.html"
             });
+            
+            $routeProvider.when("/orders", {
+                templateUrl: "./views/orderList.html"
+            });            
 
             $routeProvider.otherwise({
                 templateUrl: "./views/productList.html"
@@ -36,6 +40,7 @@
     <script src="components/cart/cart.js"></script>
     <script src="ngmodules/angular-route.js"></script>
     <script src="controllers/checkoutControllers.js"></script>
+    <script src="controllers/orderController.js"></script>
 </head>
 <body ng-controller="elmDemoCtrl">
     <div class="navbar navbar-inverse">
