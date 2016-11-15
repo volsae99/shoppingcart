@@ -1,9 +1,7 @@
 package com.elm.demo.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -34,7 +32,7 @@ public class Order implements Serializable {
 	private String zip;
 	private String country;
 	
-	private List<OrderDetail> orderDetails;
+	private List<OrderDetail> products;
 	
 	@Id
 	@SequenceGenerator(name="ORDER_ID_GENERATOR", sequenceName="ORDER_SEQ")
@@ -63,8 +61,8 @@ public class Order implements Serializable {
 
 	@OneToMany(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinColumn(name="ORDER_ID")
-	public List<OrderDetail> getOrderDetails() { return orderDetails; }
-	public void setOrderDetails(List<OrderDetail> orderDetails) { this.orderDetails = orderDetails; }
+	public List<OrderDetail> getProducts() { return products; }
+	public void setProducts(List<OrderDetail> products) { this.products = products; }
 
 	public String toString() { return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE); }
 
